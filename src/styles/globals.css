@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  :root {
+    /* Strict Monochrome Light Theme */
+    --background: #fafafa;
+    --foreground: #09090b;
+    --surface: #ffffff;
+    --surface-elevated: #f4f4f5;
+    --surface-muted: #e4e4e7;
+    --border: #e4e4e7;
+    --border-subtle: #f4f4f5;
+    --muted: #71717a;
+    --muted-foreground: #71717a;
+    --primary: #09090b;
+    --primary-foreground: #fafafa;
+    --accent: #09090b;
+    --accent-foreground: #fafafa;
+    --destructive: #18181b;
+    --destructive-foreground: #fafafa;
+    --ring: #09090b;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Strict Monochrome Dark Theme */
+    --background: #09090b;
+    --foreground: #fafafa;
+    --surface: #121215;
+    --surface-elevated: #18181b;
+    --surface-muted: #27272a;
+    --border: #27272a;
+    --border-subtle: #1c1c20;
+    --muted: #a1a1aa;
+    --muted-foreground: #a1a1aa;
+    --primary: #fafafa;
+    --primary-foreground: #09090b;
+    --accent: #fafafa;
+    --accent-foreground: #09090b;
+    --destructive: #fafafa;
+    --destructive-foreground: #09090b;
+    --ring: #d4d4d8;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+code, pre, kbd {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Glassmorphism & Monochrome Radial Effects */
+.glass-panel {
+  background: rgba(18, 18, 21, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.glow-zinc {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+}
+
+.light .glow-zinc {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+}
+
+.glow-accent {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+}
+
+.light .glow-accent {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.04) 0%, transparent 60%);
+}
+
+/* Subtle grid texture */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(120, 120, 120, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 120, 120, 0.05) 1px, transparent 1px);
+}

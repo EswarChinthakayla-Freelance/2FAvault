@@ -1,0 +1,37 @@
+{
+  "name": "2fa-vault-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run generate:sitemap && tsc -b && vite build && npm run verify:seo",
+    "preview": "vite preview",
+    "verify:downloads": "node scripts/verify-downloads.mjs",
+    "validate:changelog": "node scripts/validate-changelog.mjs",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs",
+    "verify": "npm run validate:changelog && npm run verify:downloads && npm run build"
+  },
+  "dependencies": {
+    "@hugeicons/core-free-icons": "^4.2.3",
+    "@hugeicons/react": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5",
+    "tailwind-merge": "^3.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.6",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.6",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}
