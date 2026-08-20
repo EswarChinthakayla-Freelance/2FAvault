@@ -2,7 +2,7 @@ import { Shield, Smartphone, Server, ShieldCheck, FileKey, Database } from 'luci
 
 export function ArchitectureDiagram() {
   return (
-    <div className="rounded-3xl border border-border bg-surface p-6 sm:p-10 shadow-sm space-y-8">
+    <div className="rounded-[28px] border border-border bg-surface p-5 sm:p-10 shadow-[0_1px_2px_rgba(0,0,0,0.06),0_20px_55px_rgba(0,0,0,0.07)] space-y-8">
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
           Zero-Knowledge Cryptographic Trust Boundary
@@ -42,7 +42,7 @@ export function ArchitectureDiagram() {
         </div>
 
         {/* Step 2: Vault Engine */}
-        <div className="rounded-2xl border border-zinc-700 bg-surface-elevated/80 p-5 space-y-4 relative shadow-sm">
+        <div className="rounded-[22px] border border-foreground/20 bg-surface-elevated/80 p-5 space-y-4 relative shadow-sm">
           <div className="flex items-center justify-between">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <Shield className="h-5 w-5" />

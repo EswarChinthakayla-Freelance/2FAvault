@@ -59,7 +59,7 @@ export function SupportPage() {
           </div>
 
           {/* Security Disclosure Card */}
-          <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8 space-y-4 shadow-sm">
+          <div className="rounded-[26px] border border-border bg-surface p-5 sm:p-8 space-y-4 shadow-[0_1px_2px_rgba(0,0,0,0.05),0_16px_42px_rgba(0,0,0,0.06)]">
             <div className="flex items-center gap-2.5">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface-elevated text-foreground border border-border">
                 <ShieldAlert className="h-4 w-4" />

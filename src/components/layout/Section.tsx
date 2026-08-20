@@ -21,7 +21,7 @@ export function Section({
   return (
     <section
       className={cn(
-        'relative py-16 md:py-24 overflow-hidden',
+        'relative overflow-hidden py-14 sm:py-16 md:py-24',
         glow && 'glow-zinc',
         grid && 'bg-grid-pattern',
         className

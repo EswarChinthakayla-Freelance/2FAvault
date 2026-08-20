@@ -10,7 +10,7 @@ export function StoreBadge({ playStoreUrl, className }: StoreBadgeProps) {
     return (
       <div
         className={cn(
-          'inline-flex items-center gap-3 rounded-2xl border border-border bg-surface-elevated px-4 py-2.5 opacity-80 cursor-default select-none',
+          'inline-flex min-h-12 items-center gap-3 rounded-[14px] border border-border bg-surface-elevated px-4 py-2.5 shadow-sm opacity-80 cursor-default select-none',
           className
         )}
         title="Google Play release is coming soon"
@@ -34,7 +34,7 @@ export function StoreBadge({ playStoreUrl, className }: StoreBadgeProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        'inline-flex items-center gap-3 rounded-2xl border border-border bg-surface px-4 py-2.5 text-foreground hover:bg-surface-elevated transition-all active:scale-[0.98]',
+        'inline-flex min-h-12 items-center gap-3 rounded-[14px] border border-border bg-surface px-4 py-2.5 text-foreground shadow-sm hover:-translate-y-0.5 hover:bg-surface-elevated hover:shadow-md transition-all active:translate-y-px active:scale-[0.985]',
         className
       )}
     >

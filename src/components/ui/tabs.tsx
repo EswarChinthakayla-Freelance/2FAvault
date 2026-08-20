@@ -46,7 +46,7 @@ export function TabsList({
   return (
     <div
       className={cn(
-        'inline-flex items-center justify-center rounded-xl bg-surface-elevated p-1 text-muted border border-border',
+        'inline-flex min-h-11 items-center justify-center rounded-[15px] border border-border bg-surface-elevated p-1 text-muted shadow-inner',
         className
       )}
     >
@@ -72,9 +72,9 @@ export function TabsTrigger({
       type="button"
       onClick={() => ctx?.onValueChange(value)}
       className={cn(
-        'inline-flex items-center justify-center whitespace-nowrap rounded-lg px-3.5 py-1.5 text-sm font-medium transition-all cursor-pointer',
+        'inline-flex min-h-9 items-center justify-center whitespace-nowrap rounded-[11px] border border-transparent px-3.5 py-1.5 text-sm font-semibold transition-all cursor-pointer active:scale-[0.98]',
         isActive
-          ? 'bg-surface text-foreground shadow-sm font-semibold'
+          ? 'border-border bg-surface text-foreground shadow-sm'
           : 'text-muted-foreground hover:text-foreground hover:bg-surface/50',
         className
       )}

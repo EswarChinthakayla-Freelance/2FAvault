@@ -84,10 +84,10 @@ export function ScreenshotShowcase() {
               type="button"
               onClick={() => handleTabSelect(item.id as MobileTabType)}
               className={cn(
-                'flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all whitespace-nowrap cursor-pointer',
+                'flex min-h-10 items-center gap-2 rounded-[14px] border px-3.5 py-2 text-xs font-semibold transition-all whitespace-nowrap active:scale-[0.98] cursor-pointer',
                 isActive
-                  ? 'bg-foreground text-background shadow-sm'
-                  : 'bg-surface-elevated text-muted-foreground hover:text-foreground border border-border'
+                  ? 'border-foreground bg-foreground text-background shadow-md'
+                  : 'border-border bg-surface-elevated text-muted-foreground hover:-translate-y-0.5 hover:text-foreground'
               )}
             >
               <Icon className="h-3.5 w-3.5" />
@@ -98,7 +98,7 @@ export function ScreenshotShowcase() {
       </div>
 
       {/* Main Feature Preview Row with Live Mobile Simulator */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-elevated/40 rounded-3xl border border-border p-6 sm:p-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-elevated/40 rounded-[28px] border border-border p-5 sm:p-10 shadow-[0_1px_2px_rgba(0,0,0,0.05),0_18px_50px_rgba(0,0,0,0.06)]">
         {/* Left: Device Mockup with Synced Tab Selection */}
         <div className="lg:col-span-6 flex justify-center">
           <DeviceFrame

@@ -28,7 +28,7 @@ export function SiteHeader() {
         'sticky top-0 z-40 w-full transition-all duration-200 backdrop-blur-md',
         scrolled
           ? 'bg-white/95 dark:bg-zinc-950/95 border-b border-border shadow-xs'
-          : 'bg-white/80 dark:bg-zinc-950/80 border-b border-border/40'
+          : 'bg-white/92 dark:bg-zinc-950/92 border-b border-border/60'
       )}
     >
       <Container size="lg" className="flex h-16 items-center justify-between">
@@ -50,10 +50,10 @@ export function SiteHeader() {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'relative rounded-xl px-3.5 py-1.5 text-sm font-medium transition-colors select-none',
+                  'relative min-h-10 inline-flex items-center rounded-[14px] border px-3.5 py-1.5 text-sm font-semibold transition-all active:scale-[0.98] select-none',
                   isActive
-                    ? 'text-foreground font-semibold bg-surface-elevated'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-surface-elevated/50'
+                    ? 'border-border bg-surface-elevated text-foreground shadow-sm'
+                    : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground hover:bg-surface-elevated/50'
                 )}
               >
                 <span>{item.label}</span>

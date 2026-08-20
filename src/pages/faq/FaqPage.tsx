@@ -62,7 +62,7 @@ export function FaqPage() {
                 placeholder="Search questions or keywords (e.g. offline, recovery, APK)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-2xl border border-border bg-surface pl-11 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring shadow-xs"
+                className="min-h-12 w-full rounded-[16px] border border-border bg-surface pl-11 pr-4 py-3 text-sm font-medium text-foreground shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               />
             </div>
           </div>
@@ -80,10 +80,10 @@ export function FaqPage() {
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
                 className={cn(
-                  'rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all whitespace-nowrap cursor-pointer',
+                  'min-h-10 rounded-[14px] border px-3.5 py-1.5 text-xs font-semibold transition-all whitespace-nowrap active:scale-[0.98] cursor-pointer',
                   selectedCategory === cat.id
-                    ? 'bg-foreground text-background shadow-xs'
-                    : 'bg-surface-elevated text-muted-foreground hover:text-foreground border border-border'
+                    ? 'border-foreground bg-foreground text-background shadow-md'
+                    : 'border-border bg-surface-elevated text-muted-foreground hover:-translate-y-0.5 hover:text-foreground'
                 )}
               >
                 {cat.label}

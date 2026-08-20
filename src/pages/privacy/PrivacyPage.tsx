@@ -36,7 +36,7 @@ export function PrivacyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl mx-auto">
           {/* Sidebar */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="rounded-3xl border border-border bg-surface p-5 sticky top-24">
+            <div className="rounded-[24px] border border-border bg-surface p-4 sticky top-24 shadow-sm">
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-4 pb-2 block">
                 Documentation
               </span>

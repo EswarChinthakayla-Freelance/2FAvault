@@ -160,7 +160,7 @@ code, pre, kbd {
     linear-gradient(to bottom, rgba(120, 120, 120, 0.05) 1px, transparent 1px);
 }
 
-/* One coordinated, scroll-scrubbed product journey. */
+/* Retired cinematic experiment styles kept commented for clean rollback.
 .cinematic-journey { position: relative; height: 760vh; background: #050507; color: #fafafa; }
 .cinematic-stage { position: sticky; top: 0; height: 100vh; min-height: 620px; overflow: hidden; isolation: isolate; }
 .cinematic-field { position: absolute; inset: -8%; z-index: -2; background: radial-gradient(circle at 65% 45%, #27272a 0, #111114 23%, #050507 58%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: auto, 42px 42px, 42px 42px; will-change: transform; }
@@ -223,3 +223,4 @@ code, pre, kbd {
   .cinematic-architecture,.cinematic-transfer{gap:8px;transform:scale(.72)}.cinematic-architecture span,.cinematic-transfer span{min-width:125px}.cinematic-orbits{width:310px}.cinematic-orbits span{width:82px}
   .cinematic-fallback article { grid-template-columns:1fr; min-height:auto; padding:70px 0; }.cinematic-fallback article:nth-child(even)>:first-child{order:0}
 }
+*/

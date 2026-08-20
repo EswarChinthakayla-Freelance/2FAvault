@@ -3,23 +3,23 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/cn';
 
 const badgeVariants = cva(
-  'inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  'inline-flex min-h-7 items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-bold tracking-[0.01em] shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
   {
     variants: {
       variant: {
         default:
-          'border border-border bg-surface-elevated text-foreground hover:bg-border/60',
+          'border-border bg-surface-elevated text-foreground hover:bg-surface-muted',
         secondary:
-          'border border-transparent bg-surface-muted text-foreground',
-        outline: 'border border-border text-foreground',
+          'border-border/70 bg-surface-muted text-foreground',
+        outline: 'border-border bg-surface/70 text-foreground',
         success:
-          'border border-zinc-700/80 bg-zinc-800/80 text-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100',
+          'border-foreground/15 bg-foreground/8 text-foreground',
         warning:
-          'border border-zinc-700 bg-zinc-800/60 text-zinc-200',
+          'border-foreground/15 bg-surface-elevated text-foreground',
         accent:
-          'border border-zinc-600 bg-zinc-800 text-zinc-100',
+          'border-primary bg-primary text-primary-foreground',
         destructive:
-          'border border-zinc-700 bg-zinc-900 text-zinc-200',
+          'border-destructive/30 bg-destructive/10 text-foreground',
       },
     },
     defaultVariants: {

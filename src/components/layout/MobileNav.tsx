@@ -48,17 +48,14 @@ export function MobileNav() {
         <>
           {/* Backdrop overlay to dim background content */}
           <div
-            className="fixed inset-0 top-16 z-40 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200"
+            className="fixed inset-0 top-16 z-40 bg-black/75 backdrop-blur-[2px] animate-in fade-in duration-200"
             onClick={closeMenu}
             aria-hidden="true"
           />
 
           {/* Opaque Sheet Drawer */}
           <div
-            className="fixed top-16 inset-x-0 z-50 max-h-[calc(100vh-4rem)] overflow-y-auto bg-white dark:bg-zinc-950 border-b border-border p-6 shadow-2xl flex flex-col justify-between space-y-6 animate-in slide-in-from-top-2 fade-in duration-200"
-            style={{
-              backgroundColor: 'var(--sheet-bg, inherit)',
-            }}
+            className="fixed top-16 inset-x-0 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-border bg-background p-5 shadow-[0_24px_70px_rgba(0,0,0,0.4)] flex flex-col justify-between space-y-6 isolate animate-in slide-in-from-top-2 fade-in duration-200"
           >
             <div className="flex flex-col space-y-4">
               <div className="pb-3 border-b border-border flex items-center justify-between">
@@ -81,10 +78,10 @@ export function MobileNav() {
                       to={item.href}
                       onClick={closeMenu}
                       className={cn(
-                        'flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors',
+                        'flex min-h-12 items-center justify-between rounded-2xl border px-4 py-3 text-[15px] font-semibold transition-all active:scale-[0.985]',
                         isActive
-                          ? 'bg-zinc-100 dark:bg-zinc-900 text-foreground font-semibold border border-border'
-                          : 'text-muted-foreground hover:bg-zinc-100/70 dark:hover:bg-zinc-900/70 hover:text-foreground'
+                          ? 'border-border bg-surface-elevated text-foreground shadow-sm'
+                          : 'border-transparent bg-transparent text-muted-foreground hover:border-border hover:bg-surface hover:text-foreground'
                       )}
                     >
                       <span>{item.label}</span>
@@ -109,7 +106,7 @@ export function MobileNav() {
               </div>
 
               <Link to="/download" onClick={closeMenu}>
-                <Button variant="default" size="lg" className="w-full gap-2 font-semibold shadow-md">
+                <Button variant="default" size="lg" className="w-full gap-2 font-semibold">
                   <Download className="h-4 w-4" />
                   <span>Download APK (v{LATEST_RELEASE.version})</span>
                 </Button>

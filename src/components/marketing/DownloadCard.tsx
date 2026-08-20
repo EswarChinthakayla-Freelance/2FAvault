@@ -25,7 +25,7 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
   };
 
   return (
-    <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8 shadow-xl space-y-6">
+    <div className="rounded-[28px] border border-border bg-surface p-5 sm:p-8 shadow-[0_2px_4px_rgba(0,0,0,0.07),0_22px_60px_rgba(0,0,0,0.09)] space-y-6">
       {/* Header Info */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6">
         <div>
@@ -60,7 +60,7 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
           <a
             href={release.apkUrl}
             download
-            className="flex flex-col justify-between p-5 rounded-2xl border border-zinc-700 bg-surface-elevated hover:border-zinc-500 transition-all group"
+            className="group flex min-h-48 flex-col justify-between rounded-[22px] border border-border bg-surface-elevated p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-lg active:scale-[0.99]"
           >
             <div className="space-y-1">
               <div className="flex items-center justify-between">
@@ -87,7 +87,7 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
             </div>
           </a>
         ) : (
-          <div className="min-h-48 p-5 rounded-2xl border border-dashed border-border bg-surface-elevated/50 flex flex-col items-center justify-center text-center gap-3">
+          <div className="min-h-48 p-5 rounded-[22px] border border-dashed border-border bg-surface-elevated/50 flex flex-col items-center justify-center text-center gap-3 shadow-inner">
             <Clock3 className="h-6 w-6 text-muted-foreground" aria-hidden="true" />
             <div>
               <p className="text-sm font-semibold text-foreground">Direct APK is not published yet</p>
@@ -97,7 +97,7 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
         )}
 
         {/* Google Play Store Card */}
-        <div className="flex flex-col justify-between p-5 rounded-2xl border border-border bg-surface-elevated/40">
+        <div className="flex min-h-48 flex-col justify-between rounded-[22px] border border-border bg-surface-elevated/40 p-5 shadow-sm">
           <div className="space-y-1">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-mono">
               Google Play Store
@@ -116,7 +116,7 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
 
       {/* SHA-256 Hash Verification */}
       {release.apkSha256 && (
-        <div className="rounded-2xl border border-border bg-surface-elevated/60 p-4 space-y-2.5">
+        <div className="rounded-[20px] border border-border bg-surface-elevated/60 p-4 space-y-2.5 shadow-inner">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
               <ShieldCheck className="h-4 w-4 text-foreground" />

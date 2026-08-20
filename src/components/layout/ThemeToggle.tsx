@@ -20,7 +20,7 @@ export function ThemeToggle({ className, variant = 'cycle' }: ThemeToggleProps) 
     return (
       <div
         className={cn(
-          'inline-flex items-center rounded-xl bg-surface-elevated p-1 border border-border',
+          'inline-flex min-h-11 items-center rounded-[15px] bg-surface-elevated p-1 border border-border shadow-inner',
           className
         )}
       >
@@ -33,9 +33,9 @@ export function ThemeToggle({ className, variant = 'cycle' }: ThemeToggleProps) 
               type="button"
               onClick={() => setTheme(opt.value)}
               className={cn(
-                'flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-all cursor-pointer',
+                'flex min-h-9 items-center gap-1.5 rounded-[11px] border border-transparent px-2.5 py-1 text-xs font-semibold transition-all active:scale-[0.98] cursor-pointer',
                 isActive
-                  ? 'bg-surface text-foreground shadow-sm font-semibold'
+                  ? 'border-border bg-surface text-foreground shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
               )}
               title={`Switch to ${opt.label} theme`}
@@ -65,7 +65,7 @@ export function ThemeToggle({ className, variant = 'cycle' }: ThemeToggleProps) 
       type="button"
       onClick={handleCycle}
       className={cn(
-        'inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-surface text-foreground transition-colors hover:bg-surface-elevated cursor-pointer',
+        'inline-flex h-10 w-10 items-center justify-center rounded-[14px] border border-border bg-surface text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:bg-surface-elevated active:translate-y-px active:scale-[0.97] cursor-pointer',
         className
       )}
       title={`Current: ${theme} theme. Click to cycle.`}

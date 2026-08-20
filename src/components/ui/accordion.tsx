@@ -38,7 +38,7 @@ export function Accordion({
 
   return (
     <AccordionContext.Provider value={{ expanded, toggle, type }}>
-      <div className={cn('divide-y divide-border rounded-2xl border border-border bg-surface overflow-hidden', className)}>
+      <div className={cn('divide-y divide-border overflow-hidden rounded-[22px] border border-border bg-surface shadow-[0_1px_2px_rgba(0,0,0,0.05),0_14px_38px_rgba(0,0,0,0.05)]', className)}>
         {children}
       </div>
     </AccordionContext.Provider>
@@ -83,7 +83,7 @@ export function AccordionTrigger({
       type="button"
       onClick={() => value && ctx?.toggle(value)}
       className={cn(
-        'flex w-full items-center justify-between p-5 text-left font-medium text-foreground transition-all hover:bg-surface-elevated cursor-pointer select-none',
+        'flex min-h-16 w-full items-center justify-between p-5 text-left font-medium text-foreground transition-all hover:bg-surface-elevated active:bg-surface-muted cursor-pointer select-none',
         className
       )}
       aria-expanded={isExpanded}
@@ -91,7 +91,7 @@ export function AccordionTrigger({
       <span className="text-base font-semibold">{children}</span>
       <ChevronDown
         className={cn(
-          'h-5 w-5 shrink-0 text-muted transition-transform duration-200',
+          'h-5 w-5 shrink-0 rounded-full border border-border bg-surface-elevated p-0.5 text-muted-foreground transition-all duration-200',
           isExpanded && 'rotate-180 text-foreground'
         )}
       />

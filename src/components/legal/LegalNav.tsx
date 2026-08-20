@@ -23,10 +23,10 @@ export function LegalNav({ className }: { className?: string }) {
             key={link.href}
             to={link.href}
             className={cn(
-              'flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors',
+              'flex min-h-11 items-center gap-3 rounded-[14px] border px-4 py-2.5 text-sm font-semibold transition-all active:scale-[0.985]',
               isActive
-                ? 'bg-surface-elevated text-foreground font-semibold border border-border'
-                : 'text-muted-foreground hover:bg-surface-elevated/50 hover:text-foreground'
+                ? 'border-border bg-surface-elevated text-foreground shadow-sm'
+                : 'border-transparent text-muted-foreground hover:border-border hover:bg-surface-elevated/50 hover:text-foreground'
             )}
           >
             <Icon className={cn('h-4 w-4', isActive ? 'text-primary' : 'text-muted')} />

@@ -44,9 +44,9 @@ export function FeatureRail() {
             return (
               <div
                 key={item.title}
-                className="flex items-start gap-4 rounded-2xl border border-border/80 bg-surface p-5 transition-all hover:border-zinc-500/40 hover:shadow-xs"
+                className="group flex items-start gap-4 rounded-[22px] border border-border bg-surface p-5 shadow-[0_1px_2px_rgba(0,0,0,0.05),0_10px_28px_rgba(0,0,0,0.04)] transition-all hover:-translate-y-1 hover:border-foreground/15 hover:shadow-lg active:scale-[0.99]"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-elevated border border-border text-foreground">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[15px] bg-surface-elevated border border-border text-foreground shadow-sm transition-transform group-hover:scale-105">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="space-y-1">

@@ -2,7 +2,10 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, ArrowRight } from 'lucide-react';
 import { updatePageMetadata } from '../../lib/seo';
-import { CinematicJourney } from '../../components/cinematic/CinematicJourney';
+import { Hero } from '../../components/marketing/Hero';
+import { FeatureRail } from '../../components/marketing/FeatureRail';
+import { FeatureSection } from '../../components/marketing/FeatureSection';
+import { ScreenshotShowcase } from '../../components/marketing/ScreenshotShowcase';
 import { SecurityPrinciples } from '../../components/marketing/SecurityPrinciples';
 import { ArchitectureDiagram } from '../../components/marketing/ArchitectureDiagram';
 import { FaqPreview } from '../../components/marketing/FaqPreview';
@@ -10,6 +13,7 @@ import { TrustCallout } from '../../components/marketing/TrustCallout';
 import { ChangelogCard } from '../../components/changelog/ChangelogCard';
 import { Section } from '../../components/layout/Section';
 import { Button } from '../../components/ui/button';
+import { FEATURES } from '../../content/features';
 import { CHANGELOG_ENTRIES } from '../../content/changelog';
 import { LATEST_RELEASE } from '../../data/releases';
 import { SITE_CONFIG } from '../../content/site';
@@ -35,7 +39,31 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <CinematicJourney />
+      <Hero />
+
+      <FeatureRail />
+
+      <Section glow>
+        <div className="space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-mono">
+              Designed For Real-World Security
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
+              Everything your authenticator should have had from day one.
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Built around the reality of multi-account management, device losses, and emergency recovery.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            <FeatureSection feature={FEATURES[0]} reversed={false} />
+            <FeatureSection feature={FEATURES[1]} reversed={true} />
+            <FeatureSection feature={FEATURES[2]} reversed={false} />
+          </div>
+        </div>
+      </Section>
 
       {/* 4. Security Architecture & Principles */}
       <Section className="border-t border-border bg-surface-elevated/30">
@@ -57,6 +85,24 @@ export function HomePage() {
           <div className="pt-6">
             <SecurityPrinciples />
           </div>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border">
+        <div className="space-y-10">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-mono">
+              App Visuals
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+              Crafted with obsessive precision.
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              Explore the actual interfaces of 2FA Vault on Android.
+            </p>
+          </div>
+
+          <ScreenshotShowcase />
         </div>
       </Section>
 
@@ -109,7 +155,7 @@ export function HomePage() {
 
       {/* 9. Final Download Banner */}
       <Section glow className="border-t border-border">
-        <div className="rounded-3xl border border-border bg-surface p-8 sm:p-14 text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div className="rounded-[30px] border border-border bg-surface p-6 sm:p-14 text-center space-y-6 shadow-[0_2px_5px_rgba(0,0,0,0.07),0_24px_70px_rgba(0,0,0,0.09)] relative overflow-hidden before:absolute before:inset-x-8 before:top-0 before:h-px before:bg-foreground/10">
           <div className="space-y-3 max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
               Ready to take control of your 2FA credentials?
