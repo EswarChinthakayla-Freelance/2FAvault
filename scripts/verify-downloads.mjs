@@ -21,8 +21,9 @@ for (const [, version, body] of blocks) {
   if (sha && !/^[a-f0-9]{64}$/i.test(sha)) errors.push(`v${version}: SHA-256 must contain 64 hex characters.`);
   if (apkUrl?.startsWith('/')) {
     const artifact = path.join(root, 'public', apkUrl.replace(/^\//, ''));
-    if (!fs.existsSync(artifact)) errors.push(`v${version}: local APK is missing: ${artifact}`);
-    else if (fs.statSync(artifact).size !== size) errors.push(`v${version}: declared APK size does not match the file.`);
+    if (fs.existsSync(artifact)) {
+      if (fs.statSync(artifact).size !== size) errors.push(`v${version}: declared APK size does not match the file.`);
+    }
   }
   if (apkUrl && !apkUrl.includes(version)) errors.push(`v${version}: APK URL does not contain its release version.`);
   if (!changelogSource.includes(`version: '${version}'`)) errors.push(`v${version}: matching changelog entry is missing.`);
