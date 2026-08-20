@@ -20,17 +20,17 @@ export function BrandLockup({
     <div className={cn('flex items-center gap-3 select-none', className)}>
       <div
         className={cn(
-          'flex items-center justify-center bg-zinc-900 border border-zinc-800 shadow-xs shrink-0',
+          'flex items-center justify-center bg-zinc-950 text-white border border-zinc-800 dark:bg-zinc-900 dark:border-zinc-800 shadow-xs shrink-0',
           radius
         )}
         style={{ width: boxSize, height: boxSize }}
       >
-        <VaultLoopMark size={markSize} glow />
+        <VaultLoopMark size={markSize} glow color="#FAFAFA" />
       </div>
       <div className="flex flex-col justify-center">
         <span
           className={cn(
-            'font-extrabold tracking-tight text-foreground leading-none',
+            'font-extrabold tracking-tight text-zinc-950 dark:text-zinc-50 leading-none',
             size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-xl' : 'text-base'
           )}
         >

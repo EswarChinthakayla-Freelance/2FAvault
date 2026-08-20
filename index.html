@@ -10,6 +10,24 @@
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
 
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('2fav.web.theme') || 'dark';
+          const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2FA Vault — Offline TOTP Authenticator & Secure Recovery</title>
     <meta name="description" content="Generate 2FA TOTP codes offline and protect recovery credentials together in one zero-knowledge encrypted vault on your Android device." />

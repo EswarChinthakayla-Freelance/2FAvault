@@ -27,8 +27,8 @@ export function SiteHeader() {
       className={cn(
         'sticky top-0 z-40 w-full transition-all duration-200 backdrop-blur-md',
         scrolled
-          ? 'bg-white/95 dark:bg-zinc-950/95 border-b border-border shadow-xs'
-          : 'bg-white/92 dark:bg-zinc-950/92 border-b border-border/60'
+          ? 'bg-background/95 border-b border-border shadow-xs'
+          : 'bg-background/90 border-b border-border/60'
       )}
     >
       <Container size="lg" className="flex h-16 items-center justify-between">
