@@ -22,7 +22,20 @@ for (const [, version, body] of blocks) {
   if (apkUrl?.startsWith('/')) {
     const artifact = path.join(root, 'public', apkUrl.replace(/^\//, ''));
     if (fs.existsSync(artifact)) {
-      if (fs.statSync(artifact).size !== size) errors.push(`v${version}: declared APK size does not match the file.`);
+      const fileSize = fs.statSync(artifact).size;
+      let isLfsPointer = false;
+      try {
+        if (fileSize < 1024) {
+          const content = fs.readFileSync(artifact, 'utf8');
+          if (content.includes('git-lfs.github.com')) {
+            isLfsPointer = true;
+          }
+        }
+      } catch {}
+
+      if (!isLfsPointer && fileSize !== size) {
+        errors.push(`v${version}: declared APK size does not match the file (${fileSize} vs ${size}).`);
+      }
     }
   }
   if (apkUrl && !apkUrl.includes(version)) errors.push(`v${version}: APK URL does not contain its release version.`);
