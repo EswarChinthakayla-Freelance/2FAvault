@@ -9,8 +9,8 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
     releasedAt: '2026-08-20',
     status: 'stable',
     apkUrl: '/2fa-vault-1.0.0.apk',
-    apkSha256: '3c0e9f1cc4e100ca644ba40e81e0771c8ebf77456ee059fbb446e932ab454ea7',
-    apkSizeBytes: 146735694,
+    apkSha256: '61d47138f89b4d345689b494b0e77b4d7e1a3730edcbab0a69bd1fdeba9ef0b1',
+    apkSizeBytes: 146508438,
     summary:
       'The initial stable release of 2FA Vault. Featuring zero-knowledge AES-256-GCM local storage, offline TOTP/HOTP calculation, integrated recovery code management, Avatar Studio, and end-to-end encrypted cloud sync.',
     highlights: [

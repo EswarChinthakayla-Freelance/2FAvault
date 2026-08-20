@@ -19,7 +19,7 @@ export function Hero() {
             <div className="space-y-4">
               <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-zinc-950 dark:text-zinc-50 leading-[1.1]">
                 Codes and recovery.{' '}
-                <span className="bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-800 dark:from-white dark:via-zinc-200 dark:to-zinc-400 bg-clip-text text-transparent">
+                <span className="text-zinc-500 dark:text-zinc-400">
                   One secure vault.
                 </span>
               </h1>

@@ -10,8 +10,8 @@ export const RELEASES: Release[] = [
       'The foundational release of 2FA Vault featuring zero-knowledge AES-256-GCM local storage, offline TOTP generation, recovery code storage with import, and end-to-end encrypted sync.',
     apkUrl: '/2fa-vault-1.0.0.apk',
     playStoreUrl: undefined, // Google Play coming soon
-    apkSha256: '3c0e9f1cc4e100ca644ba40e81e0771c8ebf77456ee059fbb446e932ab454ea7',
-    apkSizeBytes: 146735694,
+    apkSha256: '61d47138f89b4d345689b494b0e77b4d7e1a3730edcbab0a69bd1fdeba9ef0b1',
+    apkSizeBytes: 146508438,
     minimumAndroid: 'Android 10 (API 29)+',
     targetArchitecture: 'Universal APK (arm64-v8a, armeabi-v7a, x86_64)',
     status: 'stable',
