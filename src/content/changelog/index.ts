@@ -4,7 +4,7 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
   {
     slug: '1-0-0',
     version: '1.0.0',
-    build: 42,
+    build: 1,
     title: '2FA Vault 1.0.0 — General Availability',
     releasedAt: '2026-08-20',
     status: 'stable',
@@ -52,9 +52,6 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
         ],
       },
     ],
-    apkUrl: '/downloads/2fa-vault-1.0.0.apk',
-    apkSha256: 'c91e4f9b83a216dc7e48b901fc88e9198302fa998311ab244b4198ec517373ac',
-    apkSizeBytes: 26004684,
   },
 ];
 

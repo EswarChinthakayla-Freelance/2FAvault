@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Shield, ExternalLink } from 'lucide-react';
 import { BrandLockup } from '../brand/BrandLockup';
-import { GithubIcon } from '../brand/GithubIcon';
 import { Container } from './Container';
 import { FOOTER_SECTIONS } from '../../content/site';
-import { LATEST_RELEASE, PACKAGE_INFO } from '../../data/releases';
+import { LATEST_RELEASE } from '../../data/releases';
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -24,17 +23,6 @@ export function SiteFooter() {
             </p>
 
             <div className="pt-2 flex items-center gap-3">
-              <a
-                href={PACKAGE_INFO.repositoryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface-elevated px-3 py-1.5 text-xs font-medium text-foreground hover:bg-border/60 transition-colors"
-              >
-                <GithubIcon size={16} />
-                <span>GitHub Repository</span>
-                <ExternalLink className="h-3 w-3 text-muted" />
-              </a>
-
               <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                 <Shield className="h-3.5 w-3.5 text-emerald-500" />
                 <span>MIT Licensed</span>
@@ -51,7 +39,7 @@ export function SiteFooter() {
               <ul className="space-y-2 text-sm">
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    {link.isExternal ? (
+                    {'isExternal' in link && link.isExternal ? (
                       <a
                         href={link.href}
                         target="_blank"

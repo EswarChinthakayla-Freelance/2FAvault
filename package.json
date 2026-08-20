@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:sitemap && tsc -b && vite build && npm run verify:seo",
+    "build": "npm run validate:changelog && npm run verify:downloads && npm run generate:sitemap && tsc -b && vite build && npm run verify:seo",
     "preview": "vite preview",
     "verify:downloads": "node scripts/verify-downloads.mjs",
     "validate:changelog": "node scripts/validate-changelog.mjs",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
-    "verify": "npm run validate:changelog && npm run verify:downloads && npm run build"
+    "verify": "npm run build"
   },
   "dependencies": {
     "@hugeicons/core-free-icons": "^4.2.3",

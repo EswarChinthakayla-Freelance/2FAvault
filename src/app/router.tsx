@@ -1,20 +1,21 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { SiteHeader } from '../components/layout/SiteHeader';
 import { SiteFooter } from '../components/layout/SiteFooter';
 import { ScrollToTopButton } from '../components/layout/ScrollToTopButton';
-import { HomePage } from '../pages/home/HomePage';
-import { DownloadPage } from '../pages/download/DownloadPage';
-import { FeaturesPage } from '../pages/features/FeaturesPage';
-import { SecurityPage } from '../pages/security/SecurityPage';
-import { ChangelogPage } from '../pages/changelog/ChangelogPage';
-import { ChangelogDetailPage } from '../pages/changelog/ChangelogDetailPage';
-import { AboutPage } from '../pages/about/AboutPage';
-import { PrivacyPage } from '../pages/privacy/PrivacyPage';
-import { FaqPage } from '../pages/faq/FaqPage';
-import { SupportPage } from '../pages/support/SupportPage';
-import { NotFoundPage } from '../pages/not-found/NotFoundPage';
 import { ROUTES } from './routes';
+
+const HomePage = lazy(() => import('../pages/home/HomePage').then((m) => ({ default: m.HomePage })));
+const DownloadPage = lazy(() => import('../pages/download/DownloadPage').then((m) => ({ default: m.DownloadPage })));
+const FeaturesPage = lazy(() => import('../pages/features/FeaturesPage').then((m) => ({ default: m.FeaturesPage })));
+const SecurityPage = lazy(() => import('../pages/security/SecurityPage').then((m) => ({ default: m.SecurityPage })));
+const ChangelogPage = lazy(() => import('../pages/changelog/ChangelogPage').then((m) => ({ default: m.ChangelogPage })));
+const ChangelogDetailPage = lazy(() => import('../pages/changelog/ChangelogDetailPage').then((m) => ({ default: m.ChangelogDetailPage })));
+const AboutPage = lazy(() => import('../pages/about/AboutPage').then((m) => ({ default: m.AboutPage })));
+const PrivacyPage = lazy(() => import('../pages/privacy/PrivacyPage').then((m) => ({ default: m.PrivacyPage })));
+const FaqPage = lazy(() => import('../pages/faq/FaqPage').then((m) => ({ default: m.FaqPage })));
+const SupportPage = lazy(() => import('../pages/support/SupportPage').then((m) => ({ default: m.SupportPage })));
+const NotFoundPage = lazy(() => import('../pages/not-found/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -28,7 +29,7 @@ function ScrollToTop() {
         return;
       }
     }
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }, [pathname, hash]);
 
   return null;
@@ -49,6 +50,7 @@ export function AppLayout() {
       <SiteHeader />
 
       <main id="main-content" className="flex-1">
+        <Suspense fallback={<div className="min-h-[60vh]" role="status" aria-label="Loading page" />}>
         <Routes>
           <Route path={ROUTES.HOME} element={<HomePage />} />
           <Route path={ROUTES.DOWNLOAD} element={<DownloadPage />} />
@@ -62,6 +64,7 @@ export function AppLayout() {
           <Route path={ROUTES.SUPPORT} element={<SupportPage />} />
           <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
         </Routes>
+        </Suspense>
       </main>
 
       <SiteFooter />

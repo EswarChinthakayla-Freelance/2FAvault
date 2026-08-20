@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://2favault.org/sitemap.xml
+Sitemap: https://2favault.vercel.app/sitemap.xml

@@ -48,19 +48,19 @@ export function DownloadPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-xs sm:text-sm text-muted-foreground space-y-2">
-                <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between border-b border-border/60 pb-1.5">
                   <span className="text-foreground font-medium">Minimum OS:</span>
                   <span>{LATEST_RELEASE.minimumAndroid}</span>
                 </div>
-                <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between border-b border-border/60 pb-1.5">
                   <span className="text-foreground font-medium">Target Architectures:</span>
                   <span>arm64-v8a, armeabi-v7a, x86_64</span>
                 </div>
-                <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between border-b border-border/60 pb-1.5">
                   <span className="text-foreground font-medium">Permissions:</span>
                   <span>Camera (QR scan only), Biometrics</span>
                 </div>
-                <div className="flex justify-between pt-0.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between pt-0.5">
                   <span className="text-foreground font-medium">Network Access:</span>
                   <span>Optional (for multi-device sync)</span>
                 </div>
@@ -75,21 +75,21 @@ export function DownloadPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-xs sm:text-sm text-muted-foreground space-y-2">
-                <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between border-b border-border/60 pb-1.5">
                   <span className="text-foreground font-medium">Package ID:</span>
                   <span className="font-mono text-xs text-foreground">{PACKAGE_INFO.packageName}</span>
                 </div>
-                <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between border-b border-border/60 pb-1.5">
                   <span className="text-foreground font-medium">License:</span>
-                  <span>{PACKAGE_INFO.license} Open Source</span>
+                  <span>{PACKAGE_INFO.license}</span>
                 </div>
-                <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between border-b border-border/60 pb-1.5">
                   <span className="text-foreground font-medium">Release Track:</span>
                   <span className="capitalize">{LATEST_RELEASE.status}</span>
                 </div>
-                <div className="flex justify-between pt-0.5">
+                <div className="flex flex-col gap-1 sm:flex-row sm:justify-between pt-0.5">
                   <span className="text-foreground font-medium">Signing Status:</span>
-                  <span className="text-foreground font-semibold">Official Release Key</span>
+                  <span className="text-muted-foreground">Published with APK</span>
                 </div>
               </CardContent>
             </Card>
@@ -110,7 +110,7 @@ export function DownloadPage() {
               <p>
                 <strong className="text-foreground">How does SHA-256 protect me?</strong>
                 <br />
-                Computing the SHA-256 hash of your downloaded APK and comparing it against our published checksum guarantees that the file you received is byte-for-byte identical to our official build artifact.
+                Computing the SHA-256 hash of a downloaded APK and comparing it with the checksum published alongside that exact release verifies that the file is byte-for-byte identical to the published artifact.
               </p>
             </div>
           </div>

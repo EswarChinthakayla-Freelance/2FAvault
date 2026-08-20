@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.VITE_PUBLIC_SITE_URL || process.env.VITE_SITE_URL || 'https://2favault.org').replace(/\/$/, '');
+export const SITE_URL = (process.env.VITE_PUBLIC_SITE_URL || process.env.VITE_SITE_URL || 'https://2favault.vercel.app').replace(/\/$/, '');
 
 export const SEO_ROUTES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },

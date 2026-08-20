@@ -6,7 +6,6 @@ import { StoreBadge } from './StoreBadge';
 import { DeviceFrame } from './DeviceFrame';
 import { Container } from '../layout/Container';
 import { LATEST_RELEASE } from '../../data/releases';
-import { formatBytes } from '../../lib/formatVersion';
 
 export function Hero() {
   return (
@@ -35,10 +34,7 @@ export function Hero() {
               <Link to="/download" className="w-full sm:w-auto">
                 <Button variant="default" size="xl" className="w-full sm:w-auto gap-2.5 shadow-lg">
                   <Download className="h-5 w-5" />
-                  <span>Download APK</span>
-                  <span className="text-xs text-primary-foreground/70 font-normal">
-                    ({formatBytes(LATEST_RELEASE.apkSizeBytes)})
-                  </span>
+                  <span>{LATEST_RELEASE.apkUrl ? 'Download APK' : 'View Android release'}</span>
                 </Button>
               </Link>
 
@@ -49,7 +45,7 @@ export function Hero() {
             <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs text-muted-foreground">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-foreground" />
-                <span>Zero Cloud Requirement</span>
+                <span>Offline code generation</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-foreground" />
@@ -57,7 +53,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-foreground" />
-                <span>Open Source (MIT)</span>
+                <span>Optional encrypted sync</span>
               </div>
             </div>
 

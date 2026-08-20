@@ -1,20 +1,17 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Bug, MessageSquare, ExternalLink, ShieldAlert } from 'lucide-react';
+import { BookOpen, ShieldAlert } from 'lucide-react';
 import { updatePageMetadata } from '../../lib/seo';
 import { Section } from '../../components/layout/Section';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
-import { GithubIcon } from '../../components/brand/GithubIcon';
-import { SITE_CONFIG } from '../../content/site';
-import { PACKAGE_INFO } from '../../data/releases';
 
 export function SupportPage() {
   useEffect(() => {
     updatePageMetadata({
       title: 'Support & Community Channels',
       description:
-        'Official support, bug reports, and community channels for 2FA Vault on GitHub.',
+        'Troubleshooting and security guidance for 2FA Vault, with links to the public FAQ.',
       canonical: '/support',
     });
   }, []);
@@ -31,7 +28,7 @@ export function SupportPage() {
             Support & Community
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground">
-            Need help or found a bug? Connect directly with the 2FA Vault project maintainers.
+            Start with the product FAQ. An official contact channel will be listed here when one is configured.
           </p>
         </div>
       </Section>
@@ -39,58 +36,24 @@ export function SupportPage() {
       {/* Support Options */}
       <Section>
         <div className="max-w-4xl mx-auto space-y-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* GitHub Issues */}
-            <Card className="hover:border-zinc-500/50 transition-colors">
+          <div className="grid grid-cols-1 gap-6">
+            <Card>
               <CardHeader className="space-y-2">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated border border-border text-foreground">
-                  <Bug className="h-5 w-5" />
+                  <BookOpen className="h-5 w-5" />
                 </div>
-                <CardTitle className="text-xl font-bold">Report an Issue or Bug</CardTitle>
+                <CardTitle className="text-xl font-bold">Troubleshooting & common questions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-xs sm:text-sm text-muted-foreground">
                 <p>
-                  Found an issue on a specific device or Android version? Open an issue on our public GitHub repository with reproducible steps.
+                  Find guidance about offline operation, APK installation, recovery keys, encrypted synchronization, and trusted devices.
                 </p>
-                <a
-                  href={`${PACKAGE_INFO.repositoryUrl}/issues`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
+                <Link to="/faq" className="block sm:w-fit">
                   <Button variant="default" size="sm" className="w-full gap-2 font-semibold">
-                    <GithubIcon size={16} />
-                    <span>Open GitHub Issue</span>
-                    <ExternalLink className="h-3.5 w-3.5 text-muted" />
+                    <BookOpen className="h-4 w-4" />
+                    <span>Open the FAQ</span>
                   </Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Discussions / Feature Requests */}
-            <Card className="hover:border-zinc-500/50 transition-colors">
-              <CardHeader className="space-y-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated border border-border text-foreground">
-                  <MessageSquare className="h-5 w-5" />
-                </div>
-                <CardTitle className="text-xl font-bold">Feature Requests & Ideas</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 text-xs sm:text-sm text-muted-foreground">
-                <p>
-                  Have ideas for new space organization tools, custom avatars, or backup formats? Join the discussion on GitHub.
-                </p>
-                <a
-                  href={`${PACKAGE_INFO.repositoryUrl}/discussions`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <Button variant="outline" size="sm" className="w-full gap-2 font-semibold">
-                    <GithubIcon size={16} />
-                    <span>Join GitHub Discussions</span>
-                    <ExternalLink className="h-3.5 w-3.5 text-muted" />
-                  </Button>
-                </a>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -106,15 +69,7 @@ export function SupportPage() {
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              If you discover a potential cryptographic vulnerability or sensitive data leak, please do not open a public issue.
-              Contact the maintainers directly via email at{' '}
-              <a
-                href={`mailto:${SITE_CONFIG.supportEmail}`}
-                className="font-mono text-xs font-semibold text-foreground underline underline-offset-4"
-              >
-                {SITE_CONFIG.supportEmail}
-              </a>
-              {' '}or use GitHub Private Vulnerability Reporting.
+              Do not post recovery keys, TOTP seeds, backup codes, exported vaults, or diagnostic logs containing private data in a public channel. A private disclosure channel is not currently configured on this site.
             </p>
           </div>
 

@@ -3,15 +3,14 @@ import { updatePageMetadata } from '../../lib/seo';
 import { Section } from '../../components/layout/Section';
 import { LegalNav } from '../../components/legal/LegalNav';
 import { LegalSection } from '../../components/legal/LegalSection';
-import { GithubIcon } from '../../components/brand/GithubIcon';
-import { LATEST_RELEASE, PACKAGE_INFO } from '../../data/releases';
+import { LATEST_RELEASE } from '../../data/releases';
 
 export function AboutPage() {
   useEffect(() => {
     updatePageMetadata({
       title: 'About 2FA Vault — Purpose & Philosophy',
       description:
-        'Learn about 2FA Vault, why it was created, our local-first security philosophy, and our commitment to open-source software.',
+        'Learn why 2FA Vault was created and how its local-first, offline-ready security model works.',
       canonical: '/about',
     });
   }, []);
@@ -81,23 +80,10 @@ export function AboutPage() {
               </p>
             </LegalSection>
 
-            <LegalSection title="Open Source & Free Software">
+            <LegalSection title="Licensing & Review">
               <p>
-                Security software must be verifiable. 2FA Vault is released under the permissive{' '}
-                <strong className="text-foreground">MIT License</strong>. Its client code, cryptographic routines,
-                and synchronization pipelines are open for independent security review on GitHub.
+                The repository includes an MIT License. A public source repository link will be added here only when an official project location is configured and verified.
               </p>
-              <div className="pt-2">
-                <a
-                  href={PACKAGE_INFO.repositoryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface-elevated px-4 py-2 text-xs font-semibold text-foreground hover:bg-border/60 transition-colors"
-                >
-                  <GithubIcon size={16} />
-                  <span>Inspect Source Code on GitHub</span>
-                </a>
-              </div>
             </LegalSection>
 
             <LegalSection title="Current Release & Metadata">

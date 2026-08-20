@@ -1,6 +1,6 @@
 import { NavItem } from '../types/site';
 
-const configuredUrl = import.meta.env.VITE_PUBLIC_SITE_URL || import.meta.env.VITE_SITE_URL || 'https://2favault.org';
+const configuredUrl = import.meta.env.VITE_PUBLIC_SITE_URL || import.meta.env.VITE_SITE_URL || 'https://2favault.vercel.app';
 
 export const SITE_CONFIG = {
   name: '2FA Vault',
@@ -9,10 +9,8 @@ export const SITE_CONFIG = {
     'Generate TOTP codes offline and protect recovery credentials together in one zero-knowledge encrypted vault on your Android device.',
   url: configuredUrl.replace(/\/$/, ''),
   ogImage: `${configuredUrl.replace(/\/$/, '')}/og-preview.png`,
-  githubUrl: 'https://github.com/2favault/2favault',
   author: '2FA Vault Contributors',
   license: 'MIT',
-  supportEmail: 'contact@2favault.org',
 };
 
 export const NAV_ITEMS: NavItem[] = [
@@ -39,7 +37,6 @@ export const FOOTER_SECTIONS = [
       { label: 'Security Philosophy', href: '/security' },
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Integrity Verification', href: '/download#verify' },
-      { label: 'Source Code (MIT)', href: 'https://github.com/2favault/2favault', isExternal: true },
     ],
   },
   {

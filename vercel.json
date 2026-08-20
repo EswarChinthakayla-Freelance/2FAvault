@@ -1,9 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.2favault.org" }], "destination": "https://2favault.org/:path*", "permanent": true }
-  ],
   "rewrites": [{ "source": "/((?!assets/|robots.txt|sitemap.xml|favicon|apple-touch-icon|manifest.webmanifest|og-preview.png).*)", "destination": "/index.html" }],
   "headers": [
     { "source": "/(.*)", "headers": [

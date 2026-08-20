@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Download, Check, Copy, ShieldCheck, Terminal } from 'lucide-react';
+import { Download, Check, Copy, ShieldCheck, Terminal, Clock3 } from 'lucide-react';
 import { Release } from '../../types/release';
 import { Button } from '../ui/button';
 import { StoreBadge } from './StoreBadge';
@@ -43,12 +43,12 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="rounded-xl bg-surface-elevated border border-border px-3 py-1 text-xs font-mono text-muted-foreground">
             {release.minimumAndroid}
           </span>
           <span className="rounded-xl bg-surface-elevated border border-border px-3 py-1 text-xs font-mono text-muted-foreground">
-            Universal APK
+            {release.targetArchitecture || 'Android release'}
           </span>
         </div>
       </div>
@@ -87,8 +87,12 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
             </div>
           </a>
         ) : (
-          <div className="p-5 rounded-2xl border border-border bg-surface-elevated flex flex-col justify-center text-center">
-            <span className="text-sm font-semibold text-muted-foreground">APK Download Unavailable</span>
+          <div className="min-h-48 p-5 rounded-2xl border border-dashed border-border bg-surface-elevated/50 flex flex-col items-center justify-center text-center gap-3">
+            <Clock3 className="h-6 w-6 text-muted-foreground" aria-hidden="true" />
+            <div>
+              <p className="text-sm font-semibold text-foreground">Direct APK is not published yet</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Version details are available now. The download and checksum will appear together after the signed artifact is released.</p>
+            </div>
           </div>
         )}
 
@@ -146,7 +150,7 @@ export function DownloadCard({ release, showAllDetails = false }: DownloadCardPr
       )}
 
       {/* Verification Instructions Snippet */}
-      {showAllDetails && (
+      {showAllDetails && release.apkUrl && release.apkSha256 && (
         <div className="space-y-3 pt-2 border-t border-border">
           <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5 font-mono">
             <Terminal className="h-3.5 w-3.5 text-foreground" />

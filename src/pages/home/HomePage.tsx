@@ -2,10 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, ArrowRight } from 'lucide-react';
 import { updatePageMetadata } from '../../lib/seo';
-import { Hero } from '../../components/marketing/Hero';
-import { FeatureRail } from '../../components/marketing/FeatureRail';
-import { FeatureSection } from '../../components/marketing/FeatureSection';
-import { ScreenshotShowcase } from '../../components/marketing/ScreenshotShowcase';
+import { CinematicJourney } from '../../components/cinematic/CinematicJourney';
 import { SecurityPrinciples } from '../../components/marketing/SecurityPrinciples';
 import { ArchitectureDiagram } from '../../components/marketing/ArchitectureDiagram';
 import { FaqPreview } from '../../components/marketing/FaqPreview';
@@ -13,7 +10,6 @@ import { TrustCallout } from '../../components/marketing/TrustCallout';
 import { ChangelogCard } from '../../components/changelog/ChangelogCard';
 import { Section } from '../../components/layout/Section';
 import { Button } from '../../components/ui/button';
-import { FEATURES } from '../../content/features';
 import { CHANGELOG_ENTRIES } from '../../content/changelog';
 import { LATEST_RELEASE } from '../../data/releases';
 import { SITE_CONFIG } from '../../content/site';
@@ -39,34 +35,7 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col">
-      {/* 1. Hero */}
-      <Hero />
-
-      {/* 2. Core Feature Rail */}
-      <FeatureRail />
-
-      {/* 3. Editorial Feature Deep-Dives */}
-      <Section glow>
-        <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-mono">
-              Designed For Real-World Security
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
-              Everything your authenticator should have had from day one.
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground">
-              Built around the reality of multi-account management, device losses, and emergency recovery.
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            <FeatureSection feature={FEATURES[0]} reversed={false} />
-            <FeatureSection feature={FEATURES[1]} reversed={true} />
-            <FeatureSection feature={FEATURES[2]} reversed={false} />
-          </div>
-        </div>
-      </Section>
+      <CinematicJourney />
 
       {/* 4. Security Architecture & Principles */}
       <Section className="border-t border-border bg-surface-elevated/30">
@@ -91,24 +60,6 @@ export function HomePage() {
         </div>
       </Section>
 
-      {/* 5. Screenshot Showcase */}
-      <Section className="border-t border-border">
-        <div className="space-y-10">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-mono">
-              App Visuals
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Crafted with obsessive precision.
-            </h2>
-            <p className="text-sm sm:text-base text-muted-foreground">
-              Explore the actual interfaces of 2FA Vault on Android.
-            </p>
-          </div>
-
-          <ScreenshotShowcase />
-        </div>
-      </Section>
 
       {/* 6. Latest Release Callout */}
       <Section className="border-t border-border bg-surface-elevated/20">

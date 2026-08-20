@@ -3,7 +3,6 @@ import { updatePageMetadata } from '../../lib/seo';
 import { Section } from '../../components/layout/Section';
 import { LegalNav } from '../../components/legal/LegalNav';
 import { LegalSection } from '../../components/legal/LegalSection';
-import { SITE_CONFIG } from '../../content/site';
 
 export function PrivacyPage() {
   useEffect(() => {
@@ -120,7 +119,7 @@ export function PrivacyPage() {
             <LegalSection title="8. Contact">
               <p>
                 If you have questions about this Privacy Policy or our cryptographic boundaries, you can open an issue on
-                our GitHub repository or contact us at <code className="font-mono text-xs text-foreground">{SITE_CONFIG.supportEmail}</code>.
+                the official support channel once one is published on this website.
               </p>
             </LegalSection>
           </div>
