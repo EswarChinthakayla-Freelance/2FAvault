@@ -52,8 +52,8 @@ export function SiteHeader() {
                 className={cn(
                   'relative min-h-10 inline-flex items-center rounded-[14px] border px-3.5 py-1.5 text-sm font-semibold transition-all active:scale-[0.98] select-none',
                   isActive
-                    ? 'border-border bg-surface-elevated text-zinc-950 dark:text-zinc-50 shadow-sm'
-                    : 'border-transparent text-zinc-600 dark:text-zinc-400 hover:border-border hover:text-zinc-950 dark:hover:text-white hover:bg-surface-elevated/50'
+                    ? 'border-border bg-surface-elevated text-foreground shadow-xs'
+                    : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground hover:bg-surface-elevated/60'
                 )}
               >
                 <span>{item.label}</span>

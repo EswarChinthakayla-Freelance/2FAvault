@@ -30,7 +30,7 @@ export function BrandLockup({
       <div className="flex flex-col justify-center">
         <span
           className={cn(
-            'font-extrabold tracking-tight text-zinc-950 dark:text-zinc-50 leading-none',
+            'font-extrabold tracking-tight text-foreground leading-none',
             size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-xl' : 'text-base'
           )}
         >

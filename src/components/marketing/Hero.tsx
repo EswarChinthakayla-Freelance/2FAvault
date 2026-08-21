@@ -17,13 +17,13 @@ export function Hero() {
             <ReleaseBadge />
 
             <div className="space-y-4">
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-zinc-950 dark:text-zinc-50 leading-[1.1]">
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-foreground leading-[1.1]">
                 Codes and recovery.{' '}
-                <span className="text-zinc-500 dark:text-zinc-400">
+                <span className="text-muted-foreground">
                   One secure vault.
                 </span>
               </h1>
-              <p className="max-w-2xl text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <p className="max-w-2xl text-lg sm:text-xl text-muted-foreground leading-relaxed">
                 Generate 2FA TOTP codes 100% offline and keep single-use recovery credentials together
                 in a zero-knowledge, hardware-wrapped vault on your Android phone.
               </p>
