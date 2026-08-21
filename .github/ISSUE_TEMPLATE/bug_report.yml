@@ -1,0 +1,64 @@
+name: 🐛 Bug Report
+description: File a bug report to help us improve 2FA Vault
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please ensure you do **NOT** include any sensitive information (e.g., real TOTP secrets, recovery codes, passwords, or recovery keys) in this report.
+  - type: input
+    id: version
+    attributes:
+      label: 2FA Vault Version
+      description: What version of 2FA Vault are you running? (e.g., v1.0.0)
+      placeholder: "v1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating System / Platform
+      description: Where did you encounter this issue?
+      options:
+        - Android 14
+        - Android 13
+        - Android 12
+        - Android 11
+        - Android 10
+        - Web Showcase
+        - Other (specify in description)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: "A clear description of what happened..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Step-by-step instructions to reproduce the behavior.
+      placeholder: |
+        1. Open 2FA Vault
+        2. Go to '...'
+        3. Tap on '...'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Screenshots
+      description: Paste any safe, sanitized console output or attach non-sensitive screenshots.
